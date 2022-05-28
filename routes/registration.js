@@ -13,22 +13,19 @@ router.get('/', function(req,res){
 });
 
 router.post('/', function (req,res) {
-    console.log("r");
-    console.log(req);
-    console.log(req.body.email);
-    /*dbConn.query('CALL newUser(?,?,?,?,?,?,?)',[req.body.email, req.body.psw,req.body.nome,req.body.cognome,req.body.nrAlbo,req.body.nomeFarmacia,req.body.cittaFarmacia], function(err,rows) {
-      if(err) {
-        res.render('registrationUser',{data:''});   
-      } else {
-        check = Object.values(JSON.parse(JSON.stringify(rows)));
-        if(check[0][0] == 1){
-              res.redirect('login');
+    dbConn.query('CALL newUser(?,?,?,?,?,?,?)',[req.body.email, req.body.psw,req.body.nome,req.body.cognome,req.body.nrAlbo,req.body.nomeFarmacia,req.body.cittaFarmacia], function(err,rows) {
+        if(err) {
+            res.render('registrationUser',{data:''});   
         } else {
-          res.render('registrationUser',{data:''});
+            check = Object.values(JSON.parse(JSON.stringify(rows)));
+            if(check[0][0].CHECK == 1){ //registrazione andata a buon fine
+                res.render('login');
+            } else {
+                res.render('registration',{});
+            }
         }
-      }
-    });*/
-  });
+    });
+});
 
 
 module.exports = router;

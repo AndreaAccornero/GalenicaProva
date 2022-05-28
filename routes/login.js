@@ -7,6 +7,7 @@ router.get('/', function(req,res){
         if(error) {
             res.render('login',{});
         } else {
+            console.log("ciaociaociaociaociao")
             res.render('login', {});
         }
     });  
