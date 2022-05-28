@@ -5,10 +5,18 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
 </head>
 <body>
-    REGISTRATION
+    <form method="post" action="/registration">
+        <input type="text" name="email" placeholder = "Email" required="required" autocomplete="off">
+        <input type="password" name="psw" placeholder = "Password" required="required" autocomplete="off">
+        <input type="text" name="nome" placeholder = "Nome" required="required" autocomplete="off">
+        <input type="text" name="cognome" placeholder = "Cognome" required="required" autocomplete="off">
+        <input type="text" name="nrAlbo" placeholder = "Numero iscrizione all'albo" required="required" autocomplete="off">
+        <input type="text" name="nomeFarmacia" placeholder = "Nome Farmacia" required="required" autocomplete="off">
+        <input type="text" name="cittaFarmacia" placeholder = "Città Farmacia" required="required" autocomplete="off">
+
+        <button >REGISTER</button>
+    </form>
 </body>
 </html>

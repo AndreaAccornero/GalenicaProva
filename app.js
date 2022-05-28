@@ -24,3 +24,5 @@ app.use('/registration',registrationRouter);
 /*******************ROUTER*********************************/
 
 app.listen(port)
+
+module.exports = app;
