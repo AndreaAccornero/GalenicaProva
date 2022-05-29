@@ -56,7 +56,7 @@
             <% if(user == null){%>
                 <button class="btn btn-outline-primary d-none d-lg-block" data-toggle="modal" data-target="#myModal">Login</button>
             <% } else {%>
-                <a id href="/" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal"><%= user.nome %></a>
+                <a href="/logout" class="btn btn-outline-primary d-none d-lg-block modal-open"><%= user.nome %></a>
             <%  } %>
         </div>
     </nav>

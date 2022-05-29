@@ -27,11 +27,13 @@ app.use(session({
 /*******************ROUTER*********************************/
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
-var registrationRouter = require('./routes/registration')
+var registrationRouter = require('./routes/registration');
+var logoutRouter = require('./routes/logout');
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/registration',registrationRouter);
+app.use('/logout',logoutRouter);
 
 /*******************ROUTER*********************************/
 
