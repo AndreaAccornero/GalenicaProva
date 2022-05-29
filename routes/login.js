@@ -5,10 +5,6 @@ var bcrypt = require('bcryptjs');
 
 var User = require('../classes/User');
 
-router.get('/', function(req,res){
-    res.render('login', {}); 
-});
-
 router.post('/', function(req,res){
     dbConn.query('SELECT EMAIL, PSW, NOME, COGNOME, STATO, RANK FROM T_USER T WHERE EMAIL = ?',[req.body.email], (error,rows) => {
         if(error) {
@@ -35,7 +31,6 @@ router.post('/', function(req,res){
                 })
             } else {
                 console.log("Email e/o password errata")
-                res.redirect('/login')
             }
         }
     });  

@@ -25,9 +25,8 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-    <style type="text/css">
-		
-	</style>
+    <link rel="stylesheet" type="text/css" href="css/styleLoginRegistration.css">
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -55,7 +54,7 @@
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
             <% if(user == null){%>
-                <a id="login" href="/login" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal">Login</a>
+                <button class="btn btn-outline-primary d-none d-lg-block" data-toggle="modal" data-target="#myModal">Login</button>
             <% } else {%>
                 <a id href="/" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal"><%= user.nome %></a>
             <%  } %>
@@ -64,26 +63,40 @@
     <!-- Navbar End -->
 
 
-    <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>        
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <div >
-                            
+    <!-- Modal Start -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="modal-box">
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content clearfix">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <h1 class="m-0 display-5" style="padding-bottom: 25px;"><span class="text-primary">GA</span>Lenica</h1>
+                                    <form method="post" action="/login">
+                                        <div class="form-group" style="padding: 8px;">
+                                            <span class="input-icon"><i class="fa fa-user"></i></span>
+                                            <input type="text" class="form-control" name="email" placeholder="Email" required>
+                                        </div>
+                                        <div class="form-group" style="padding: 8px;">
+                                            <span class="input-icon"><i class="fas fa-key"></i></span>
+                                            <input type="password" class="form-control" name="psw" placeholder="Password" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-outline-primary d-none d-lg-block" style="display: block; margin: 0 auto;">Login</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Video Modal End -->
-
+    <!-- Modal End -->
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
