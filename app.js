@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var path = require('path');
+var session = require('express-session');
 
 var port = process.env.PORT || 3000 
 
@@ -12,6 +13,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/public'));
+
+app.use(session({
+    cookie: { maxAge: 3600000 },
+    store: new session.MemoryStore,
+    saveUninitialized: true,
+    resave: 'true',
+    secret: 'secret'
+}))
 /****************************************************/
 
 

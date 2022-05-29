@@ -54,7 +54,11 @@
                 <a href="#blog" class="nav-item nav-link">Blog</a>
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-            <a id="login" href="/login" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal">Login</a>
+            <% if(user == null){%>
+                <a id="login" href="/login" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal">Login</a>
+            <% } else {%>
+                <a id href="/" class="btn btn-outline-primary d-none d-lg-block modal-open" data-id="demo-modal"><%= user.nome %></a>
+            <%  } %>
         </div>
     </nav>
     <!-- Navbar End -->
